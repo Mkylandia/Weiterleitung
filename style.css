@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6DD5FA, #2980B9); /* Sanfter Blau-Verlauf */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Leichter Overlay für Tiefe */
+    z-index: 1;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.15); /* Leicht transparenter Hintergrund */
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Glas-Effekt */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #eee;
+}
+
+.redirect-message {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #c9efff;
+}
+
+.models-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.models-list li {
+    margin-bottom: 10px;
+}
+
+.models-list a {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.models-list a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+button {
+    background-color: #00bcd4;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #00a0b8;
+    transform: translateY(-2px);
+}
+
+
+/* Kleine Animation für Hintergrundelemente */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.bubble:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 15%; animation-duration: 12s; }
+.bubble:nth-child(2) { width: 120px; height: 120px; top: 70%; left: 80%; animation-duration: 18s; animation-delay: 2s; }
+.bubble:nth-child(3) { width: 60px; height: 60px; top: 30%; left: 60%; animation-duration: 10s; animation-delay: 1s; }
+.bubble:nth-child(4) { width: 90px; height: 90px; top: 85%; left: 30%; animation-duration: 14s; animation-delay: 3s; }
+.bubble:nth-child(5) { width: 70px; height: 70px; top: 20%; left: 80%; animation-duration: 16s; animation-delay: 0.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(20px); }
+}
